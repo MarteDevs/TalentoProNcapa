@@ -1,0 +1,113 @@
+@model IEnumerable<TalentoPro.Application.Models.EmpleadoModel>
+
+@{
+    ViewData["Title"] = "Empleados";
+}
+
+<div class="container">
+    <h1>Empleados</h1>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Registrar Nuevo Empleado</a>
+    </p>
+
+    @if (ViewBag.DepartamentoId != null)
+    {
+        <div class="alert alert-info">
+            <h5>Mostrando empleados del departamento ID: @ViewBag.DepartamentoId</h5>
+            <a asp-controller="Departamento" asp-action="Index" class="btn btn-sm btn-outline-secondary">Volver a Departamentos</a>
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning">
+            No se encontraron empleados registrados.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.IdEmpleado)</th>
+                        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+                        <th>@Html.DisplayNameFor(model => model.NombreDepartamento)</th>
+                        <th>@Html.DisplayNameFor(model => model.Cargo)</th>
+                        <th>@Html.DisplayNameFor(model => model.Salario)</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.IdEmpleado)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
+                            <td>@Html.DisplayFor(modelItem => item.NombreDepartamento)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Cargo)</td>
+                            <td>@String.Format("{0:C}", item.Salario)</td>
+                            <td>
+                                @{
+                                    var badgeClass = item.Estado switch
+                                    {
+                                        'A' => "bg-success",
+                                        'I' => "bg-warning",
+                                        'C' => "bg-danger",
+                                        _ => "bg-secondary"
+                                    };
+                                    var estadoText = item.Estado switch
+                                    {
+                                        'A' => "Activo",
+                                        'I' => "Inactivo",
+                                        'C' => "Cesado",
+                                        _ => "Desconocido"
+                                    };
+                                }
+                                <span class="badge @badgeClass">@estadoText</span>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a asp-action="Details" asp-route-id="@item.IdEmpleado" class="btn btn-sm btn-info">
+                                        <i class="bi bi-eye"></i> Detalles
+                                    </a>
+                                    <a asp-action="Edit" asp-route-id="@item.IdEmpleado" class="btn btn-sm btn-warning">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </a>
+                                    <a asp-action="ChangeStatus" asp-route-id="@item.IdEmpleado" class="btn btn-sm btn-secondary">
+                                        <i class="bi bi-toggles"></i> Estado
+                                    </a>
+                                    <a asp-action="CalculateBenefits" asp-route-id="@item.IdEmpleado" class="btn btn-sm btn-success">
+                                        <i class="bi bi-cash-coin"></i> Beneficios
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('.alert-success').fadeOut('slow');
+            }, 3000);
+        });
+    </script>
+} 

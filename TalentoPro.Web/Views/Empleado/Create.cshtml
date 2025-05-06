@@ -1,0 +1,165 @@
+@model TalentoPro.Application.Models.EmpleadoSolicitudModel
+
+@{
+    ViewData["Title"] = "Registrar Empleado";
+}
+
+<div class="container">
+    <h1>Registrar Nuevo Empleado</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Formulario de Registro
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="mb-3 row">
+                            <label asp-for="IdEmpleado" class="col-sm-3 col-form-label">Código de Empleado</label>
+                            <div class="col-sm-9">
+                                <input asp-for="IdEmpleado" class="form-control" placeholder="Ej. EMP001" />
+                                <span asp-validation-for="IdEmpleado" class="text-danger"></span>
+                                <small class="form-text text-muted">Ingrese un código único para el empleado.</small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="Nombre" class="col-sm-3 col-form-label">Nombre</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Nombre" class="form-control" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="Apellido" class="col-sm-3 col-form-label">Apellido</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Apellido" class="form-control" />
+                                <span asp-validation-for="Apellido" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="FechaNacimiento" class="col-sm-3 col-form-label">Fecha de Nacimiento</label>
+                            <div class="col-sm-9">
+                                <input asp-for="FechaNacimiento" class="form-control" type="date" />
+                                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="FechaContratacion" class="col-sm-3 col-form-label">Fecha de Contratación</label>
+                            <div class="col-sm-9">
+                                <input asp-for="FechaContratacion" class="form-control" type="date" />
+                                <span asp-validation-for="FechaContratacion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="IdDepartamento" class="col-sm-3 col-form-label">Departamento</label>
+                            <div class="col-sm-9">
+                                <select asp-for="IdDepartamento" class="form-select">
+                                    <option value="">-- Seleccione un Departamento --</option>
+                                    <option value="1">Tecnología</option>
+                                    <option value="2">Recursos Humanos</option>
+                                    <option value="3">Finanzas</option>
+                                    <option value="4">Marketing</option>
+                                    <option value="5">Operaciones</option>
+                                </select>
+                                <span asp-validation-for="IdDepartamento" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="Cargo" class="col-sm-3 col-form-label">Cargo</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Cargo" class="form-control" />
+                                <span asp-validation-for="Cargo" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="Salario" class="col-sm-3 col-form-label">Salario</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Salario" class="form-control" type="number" step="0.01" />
+                                <span asp-validation-for="Salario" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="TipoContrato" class="col-sm-3 col-form-label">Tipo de Contrato</label>
+                            <div class="col-sm-9">
+                                <select asp-for="TipoContrato" class="form-select">
+                                    <option value="">-- Seleccione un Tipo --</option>
+                                    <option value="Tiempo completo">Tiempo completo</option>
+                                    <option value="Medio tiempo">Medio tiempo</option>
+                                    <option value="Por proyecto">Por proyecto</option>
+                                </select>
+                                <span asp-validation-for="TipoContrato" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="NivelEducacion" class="col-sm-3 col-form-label">Nivel de Educación</label>
+                            <div class="col-sm-9">
+                                <select asp-for="NivelEducacion" class="form-select">
+                                    <option value="">-- Seleccione un Nivel --</option>
+                                    <option value="Doctorado">Doctorado</option>
+                                    <option value="Maestría">Maestría</option>
+                                    <option value="Licenciatura">Licenciatura</option>
+                                    <option value="Técnico">Técnico</option>
+                                    <option value="Bachiller">Bachiller</option>
+                                </select>
+                                <span asp-validation-for="NivelEducacion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="EmailCorporativo" class="col-sm-3 col-form-label">Email Corporativo</label>
+                            <div class="col-sm-9">
+                                <input asp-for="EmailCorporativo" class="form-control" placeholder="usuario@@empresa.com" />
+                                <span asp-validation-for="EmailCorporativo" class="text-danger"></span>
+                                <small class="form-text text-muted">El email debe terminar con @@empresa.com</small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <div class="offset-sm-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-save"></i> Registrar
+                                </button>
+                                <a asp-action="Index" class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-circle"></i> Cancelar
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5>Instrucciones</h5>
+                </div>
+                <div class="card-body">
+                    <p>Complete todos los campos requeridos para registrar un nuevo empleado en el sistema.</p>
+                    <p><strong>Requisitos:</strong></p>
+                    <ul>
+                        <li>El código de empleado debe ser único</li>
+                        <li>El empleado debe ser mayor de 18 años</li>
+                        <li>El email corporativo debe terminar con @@empresa.com</li>
+                        <li>El salario debe ser acorde al tipo de contrato</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

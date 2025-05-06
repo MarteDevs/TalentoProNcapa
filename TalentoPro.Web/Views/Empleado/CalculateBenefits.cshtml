@@ -1,0 +1,110 @@
+@model TalentoPro.Web.Models.BeneficiosViewModel
+
+@{
+    ViewData["Title"] = "Cálculo de Beneficios";
+}
+
+<div class="container">
+    <h1>Cálculo de Beneficios</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4>Beneficios para: @Model.Nombre @Model.Apellido</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-md-4">ID Empleado:</dt>
+                                <dd class="col-md-8">@Model.IdEmpleado</dd>
+
+                                <dt class="col-md-4">Nombre:</dt>
+                                <dd class="col-md-8">@Model.Nombre @Model.Apellido</dd>
+
+                                <dt class="col-md-4">Cargo:</dt>
+                                <dd class="col-md-8">@Model.Cargo</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-md-4">@Html.DisplayNameFor(model => model.Antiguedad):</dt>
+                                <dd class="col-md-8">@Html.DisplayFor(model => model.Antiguedad)</dd>
+
+                                <dt class="col-md-4">@Html.DisplayNameFor(model => model.Salario):</dt>
+                                <dd class="col-md-8">@Html.DisplayFor(model => model.Salario)</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5>Detalle de Beneficios</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Concepto</th>
+                                        <th class="text-end">Monto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Salario Base</td>
+                                        <td class="text-end">@Html.DisplayFor(model => model.Salario)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Beneficios Calculados</td>
+                                        <td class="text-end">@Html.DisplayFor(model => model.BeneficiosCalculados)</td>
+                                    </tr>
+                                    <tr class="table-success">
+                                        <th>Total</th>
+                                        <th class="text-end">@Html.DisplayFor(model => model.Total)</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6>Porcentaje de Beneficios sobre Salario: @Html.DisplayFor(model => model.PorcentajeBeneficios)</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5>Información de Beneficios</h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">Los beneficios se calculan en base a los siguientes factores:</p>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item">Tipo de contrato</li>
+                        <li class="list-group-item">Años de antigüedad</li>
+                        <li class="list-group-item">Nivel de educación</li>
+                    </ul>
+                    <p class="mb-0">Los empleados con mayor antigüedad reciben beneficios adicionales cada 5 años.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Details" asp-route-id="@Model.IdEmpleado" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Volver a Detalles
+        </a>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-list"></i> Volver a la Lista
+        </a>
+    </div>
+</div> 

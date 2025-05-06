@@ -1,0 +1,337 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\TalentoPro.Web.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj",
+        "projectName": "TalentoPro.Application",
+        "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj",
+        "packagesPath": "C:\\Users\\Rokko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rokko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj": {
+                "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj",
+        "projectName": "TalentoPro.Domain",
+        "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj",
+        "packagesPath": "C:\\Users\\Rokko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rokko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj",
+        "projectName": "TalentoPro.Infrastructure",
+        "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Rokko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rokko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj": {
+                "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj"
+              },
+              "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj": {
+                "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\TalentoPro.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\TalentoPro.Web.csproj",
+        "projectName": "TalentoPro.Web",
+        "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\TalentoPro.Web.csproj",
+        "packagesPath": "C:\\Users\\Rokko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rokko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj": {
+                "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj"
+              },
+              "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

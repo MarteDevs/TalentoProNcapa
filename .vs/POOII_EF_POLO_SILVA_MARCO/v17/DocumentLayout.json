@@ -1,0 +1,273 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E20459F9-FC20-4014-B83F-C56B37114CA2}|TalentoPro.Web\\TalentoPro.Web.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E20459F9-FC20-4014-B83F-C56B37114CA2}|TalentoPro.Web\\TalentoPro.Web.csproj|solutionrelative:talentopro.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E20459F9-FC20-4014-B83F-C56B37114CA2}|TalentoPro.Web\\TalentoPro.Web.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.web\\talentopro.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E20459F9-FC20-4014-B83F-C56B37114CA2}|TalentoPro.Web\\TalentoPro.Web.csproj|solutionrelative:talentopro.web\\talentopro.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\talentopro.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\talentopro.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{503033F2-F04B-4BFC-B100-6A36FA311C2C}|TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.infrastructure\\talentopro.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{503033F2-F04B-4BFC-B100-6A36FA311C2C}|TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj|solutionrelative:talentopro.infrastructure\\talentopro.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB02686F-B3CC-47FE-96A0-579BDF3977C6}|TalentoPro.Application\\TalentoPro.Application.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.application\\talentopro.application.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{BB02686F-B3CC-47FE-96A0-579BDF3977C6}|TalentoPro.Application\\TalentoPro.Application.csproj|solutionrelative:talentopro.application\\talentopro.application.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB02686F-B3CC-47FE-96A0-579BDF3977C6}|TalentoPro.Application\\TalentoPro.Application.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.application\\talentopro.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BB02686F-B3CC-47FE-96A0-579BDF3977C6}|TalentoPro.Application\\TalentoPro.Application.csproj|solutionrelative:talentopro.application\\talentopro.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\services\\serviciodepartamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\services\\serviciodepartamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\services\\servicioempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\services\\servicioempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\services\\idepartamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\services\\idepartamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\services\\iempleadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\services\\iempleadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\repositories\\idepartamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\repositories\\idepartamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\repositories\\iempleadorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\repositories\\iempleadorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\entities\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\entities\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\entities\\departamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\entities\\departamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|c:\\users\\rokko\\downloads\\nueva carpeta (16)\\pooii_ef_polo_silva_marco_rodrigo\\pooii_ef_polo_silva_marco\\talentopro.domain\\exceptions\\domainexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C7F3B2-B60A-4EFE-9F88-475FE31D7A74}|TalentoPro.Domain\\TalentoPro.Domain.csproj|solutionrelative:talentopro.domain\\exceptions\\domainexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\Program.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\Program.cs*",
+              "RelativeToolTip": "TalentoPro.Web\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T17:27:07.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TalentoPro.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\TalentoPro.Domain.csproj",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\TalentoPro.Domain.csproj",
+              "RelativeToolTip": "TalentoPro.Domain\\TalentoPro.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-06T16:34:31.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TalentoPro.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj",
+              "RelativeToolTip": "TalentoPro.Infrastructure\\TalentoPro.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-06T16:40:03.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TalentoPro.Web.csproj",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\TalentoPro.Web.csproj",
+              "RelativeDocumentMoniker": "TalentoPro.Web\\TalentoPro.Web.csproj",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Web\\TalentoPro.Web.csproj",
+              "RelativeToolTip": "TalentoPro.Web\\TalentoPro.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-06T16:46:53.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TalentoPro.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj",
+              "RelativeDocumentMoniker": "TalentoPro.Application\\TalentoPro.Application.csproj",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj",
+              "RelativeToolTip": "TalentoPro.Application\\TalentoPro.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-06T16:47:19.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TalentoPro.Application",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj",
+              "RelativeDocumentMoniker": "TalentoPro.Application\\TalentoPro.Application.csproj",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj",
+              "RelativeToolTip": "TalentoPro.Application\\TalentoPro.Application.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-06T16:47:23.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ServicioDepartamento.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\ServicioDepartamento.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Services\\ServicioDepartamento.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\ServicioDepartamento.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Services\\ServicioDepartamento.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAiwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:45:23.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServicioEmpleado.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\ServicioEmpleado.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Services\\ServicioEmpleado.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\ServicioEmpleado.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Services\\ServicioEmpleado.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwIEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:44:40.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IDepartamentoService.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\IDepartamentoService.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Services\\IDepartamentoService.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\IDepartamentoService.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Services\\IDepartamentoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:45:07.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IEmpleadoService.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\IEmpleadoService.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Services\\IEmpleadoService.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Services\\IEmpleadoService.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Services\\IEmpleadoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:44:12.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IDepartamentoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Repositories\\IDepartamentoRepository.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Repositories\\IDepartamentoRepository.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Repositories\\IDepartamentoRepository.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Repositories\\IDepartamentoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:43:33.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IEmpleadoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Repositories\\IEmpleadoRepository.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Repositories\\IEmpleadoRepository.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Repositories\\IEmpleadoRepository.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Repositories\\IEmpleadoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:43:06.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Entities\\Empleado.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Entities\\Empleado.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Entities\\Empleado.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Entities\\Empleado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:40:01.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Departamento.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Entities\\Departamento.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Entities\\Departamento.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Entities\\Departamento.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Entities\\Departamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:40:49.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DomainException.cs",
+              "DocumentMoniker": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Exceptions\\DomainException.cs",
+              "RelativeDocumentMoniker": "TalentoPro.Domain\\Exceptions\\DomainException.cs",
+              "ToolTip": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Domain\\Exceptions\\DomainException.cs",
+              "RelativeToolTip": "TalentoPro.Domain\\Exceptions\\DomainException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T16:41:40.255Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "LBtACBDwQFg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rokko\\Downloads\\Nueva carpeta (16)\\POOII_EF_POLO_SILVA_MARCO_RODRIGO\\POOII_EF_POLO_SILVA_MARCO\\TalentoPro.Application\\TalentoPro.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rokko\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.4\\microsoft.extensions.dependencyinjection.9.0.4.nupkg.sha512",
+    "C:\\Users\\Rokko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.4\\microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

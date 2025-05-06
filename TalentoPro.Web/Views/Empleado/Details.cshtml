@@ -1,0 +1,111 @@
+@model TalentoPro.Application.Models.EmpleadoModel
+
+@{
+    ViewData["Title"] = "Detalles del Empleado";
+}
+
+<div class="container">
+    <h1>Detalles del Empleado</h1>
+
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h4>@Model.Nombre @Model.Apellido</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.IdEmpleado)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.IdEmpleado)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Nombre)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Nombre)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Apellido)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Apellido)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.FechaNacimiento)</dt>
+                        <dd class="col-sm-8">@Model.FechaNacimiento.ToString("dd/MM/yyyy")</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.FechaContratacion)</dt>
+                        <dd class="col-sm-8">@Model.FechaContratacion.ToString("dd/MM/yyyy")</dd>
+
+                        <dt class="col-sm-4">Departamento</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NombreDepartamento) (ID: @Model.IdDepartamento)</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Cargo)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Cargo)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Salario)</dt>
+                        <dd class="col-sm-8">@String.Format("{0:C}", Model.Salario)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.TipoContrato)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.TipoContrato)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.NivelEducacion)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NivelEducacion)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.EmailCorporativo)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.EmailCorporativo)</dd>
+
+                        <dt class="col-sm-4">Estado</dt>
+                        <dd class="col-sm-8">
+                            @{
+                                var badgeClass = Model.Estado switch
+                                {
+                                    'A' => "bg-success",
+                                    'I' => "bg-warning",
+                                    'C' => "bg-danger",
+                                    _ => "bg-secondary"
+                                };
+                                var estadoText = Model.Estado switch
+                                {
+                                    'A' => "Activo",
+                                    'I' => "Inactivo",
+                                    'C' => "Cesado",
+                                    _ => "Desconocido"
+                                };
+                            }
+                            <span class="badge @badgeClass">@estadoText</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <h5>Información Adicional</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Antigüedad</dt>
+                        <dd class="col-sm-8">@Model.Antiguedad años</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Beneficios Calculados</dt>
+                        <dd class="col-sm-8">@String.Format("{0:C}", Model.Beneficios)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.IdEmpleado" class="btn btn-warning">
+            <i class="bi bi-pencil-square"></i> Editar
+        </a>
+        <a asp-action="ChangeStatus" asp-route-id="@Model.IdEmpleado" class="btn btn-secondary">
+            <i class="bi bi-toggles"></i> Cambiar Estado
+        </a>
+        <a asp-action="CalculateBenefits" asp-route-id="@Model.IdEmpleado" class="btn btn-success">
+            <i class="bi bi-cash-coin"></i> Calcular Beneficios
+        </a>
+        <a asp-action="Index" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-left"></i> Volver a la lista
+        </a>
+    </div>
+</div> 

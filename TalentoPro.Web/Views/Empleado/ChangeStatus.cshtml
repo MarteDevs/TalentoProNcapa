@@ -1,0 +1,96 @@
+@model TalentoPro.Web.Models.CambioEstadoViewModel
+
+@{
+    ViewData["Title"] = "Cambiar Estado";
+}
+
+<div class="container">
+    <h1>Cambiar Estado del Empleado</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h5>@Model.Nombre @Model.Apellido</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="ChangeStatus">
+                        <input type="hidden" asp-for="IdEmpleado" />
+                        
+                        <div class="mb-3 row">
+                            <label asp-for="Estado" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <div class="form-control-plaintext">
+                                    @{
+                                        var badgeClass = Model.Estado switch
+                                        {
+                                            'A' => "bg-success",
+                                            'I' => "bg-warning",
+                                            'C' => "bg-danger",
+                                            _ => "bg-secondary"
+                                        };
+                                    }
+                                    <span class="badge @badgeClass">@Model.EstadoTexto</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="NuevoEstado" class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <select asp-for="NuevoEstado" class="form-select">
+                                    <option value="">-- Seleccione --</option>
+                                    <option value="A">Activo</option>
+                                    <option value="I">Inactivo</option>
+                                    <option value="C">Cesado</option>
+                                </select>
+                                <span asp-validation-for="NuevoEstado" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <strong>Atención:</strong> El cambio de estado puede afectar el cálculo de beneficios y 
+                            otros aspectos relacionados con el empleado.
+                        </div>
+
+                        <div class="mb-3 row">
+                            <div class="offset-sm-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-check-circle"></i> Confirmar Cambio
+                                </button>
+                                <a asp-action="Details" asp-route-id="@Model.IdEmpleado" class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-circle"></i> Cancelar
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5>Información de Estados</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-2">
+                        <span class="badge bg-success">Activo (A)</span>
+                        <p class="small mt-1">Empleado trabajando normalmente en la empresa.</p>
+                    </div>
+                    <div class="mb-2">
+                        <span class="badge bg-warning">Inactivo (I)</span>
+                        <p class="small mt-1">Empleado temporalmente inactivo (licencia, suspensión, etc.).</p>
+                    </div>
+                    <div class="mb-2">
+                        <span class="badge bg-danger">Cesado (C)</span>
+                        <p class="small mt-1">Empleado que ya no trabaja en la empresa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 
