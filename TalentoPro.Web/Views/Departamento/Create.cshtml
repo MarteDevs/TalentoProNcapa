@@ -1,0 +1,71 @@
+@model TalentoPro.Domain.Entities.Departamento
+
+@{
+    ViewData["Title"] = "Crear Departamento";
+}
+
+<div class="container">
+    <h1>Registrar Nuevo Departamento</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Formulario de Registro
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="mb-3 row">
+                            <label asp-for="Nombre" class="col-sm-3 col-form-label">Nombre</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Nombre" class="form-control" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="Descripcion" class="col-sm-3 col-form-label">Descripción</label>
+                            <div class="col-sm-9">
+                                <textarea asp-for="Descripcion" class="form-control" rows="4"></textarea>
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <div class="offset-sm-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-save"></i> Registrar
+                                </button>
+                                <a asp-action="Index" class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-circle"></i> Cancelar
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5>Instrucciones</h5>
+                </div>
+                <div class="card-body">
+                    <p>Complete los campos para registrar un nuevo departamento en el sistema.</p>
+                    <p><strong>Requisitos:</strong></p>
+                    <ul>
+                        <li>El nombre del departamento es obligatorio</li>
+                        <li>Proporcione una descripción clara de las funciones del departamento</li>
+                        <li>Por defecto, los departamentos se crean con estado Activo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

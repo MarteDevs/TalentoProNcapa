@@ -1,28 +1,28 @@
 @model TalentoPro.Application.Models.EmpleadoSolicitudModel
 
 @{
-    ViewData["Title"] = "Registrar Empleado";
+    ViewData["Title"] = "Editar Empleado";
 }
 
 <div class="container">
-    <h1>Registrar Nuevo Empleado</h1>
+    <h1>Editar Empleado</h1>
 
     <div class="row">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    Formulario de Registro
+                    Formulario de Edición
                 </div>
                 <div class="card-body">
-                    <form asp-action="Create">
+                    <form asp-action="Edit">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="IdEmpleado" />
                         
                         <div class="mb-3 row">
                             <label asp-for="IdEmpleado" class="col-sm-3 col-form-label">Código de Empleado</label>
                             <div class="col-sm-9">
-                                <input asp-for="IdEmpleado" class="form-control" placeholder="Ej. EMP001" />
+                                <input asp-for="IdEmpleado" class="form-control" readonly />
                                 <span asp-validation-for="IdEmpleado" class="text-danger"></span>
-                                <small class="form-text text-muted">Ingrese un código único para el empleado.</small>
                             </div>
                         </div>
 
@@ -115,7 +115,7 @@
                         <div class="mb-3 row">
                             <label asp-for="EmailCorporativo" class="col-sm-3 col-form-label">Email Corporativo</label>
                             <div class="col-sm-9">
-                                <input asp-for="EmailCorporativo" class="form-control" placeholder="usuario@@empresa.com" />
+                                <input asp-for="EmailCorporativo" class="form-control" />
                                 <span asp-validation-for="EmailCorporativo" class="text-danger"></span>
                                 <small class="form-text text-muted">El email debe terminar con @@empresa.com</small>
                             </div>
@@ -124,7 +124,7 @@
                         <div class="mb-3 row">
                             <div class="offset-sm-3 col-sm-9">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-save"></i> Registrar
+                                    <i class="bi bi-save"></i> Guardar Cambios
                                 </button>
                                 <a asp-action="Index" class="btn btn-outline-secondary">
                                     <i class="bi bi-x-circle"></i> Cancelar
@@ -141,13 +141,12 @@
                     <h5>Instrucciones</h5>
                 </div>
                 <div class="card-body">
-                    <p>Complete todos los campos requeridos para registrar un nuevo empleado en el sistema.</p>
-                    <p><strong>Requisitos:</strong></p>
+                    <p>Actualice la información del empleado según sea necesario.</p>
+                    <p><strong>Notas:</strong></p>
                     <ul>
-                        <li>El código de empleado debe ser único</li>
-                        <li>El empleado debe ser mayor de 18 años</li>
+                        <li>El código de empleado no se puede modificar</li>
                         <li>El email corporativo debe terminar con @@empresa.com</li>
-                        <li>El salario debe ser acorde al tipo de contrato</li>
+                        <li>Todos los cambios serán validados antes de guardarse</li>
                     </ul>
                 </div>
             </div>

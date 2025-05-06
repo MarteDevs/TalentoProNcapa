@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using TalentoPro.Application.Excepciones;
 using TalentoPro.Application.Models;
@@ -11,10 +13,19 @@ namespace TalentoPro.Web.Controllers
     public class EmpleadoController : Controller
     {
         private readonly IEmpleadoServicio _empleadoServicio;
+        private readonly IDepartamentoServicio _departamentoServicio;
 
-        public EmpleadoController(IEmpleadoServicio empleadoServicio)
+        public EmpleadoController(IEmpleadoServicio empleadoServicio, IDepartamentoServicio departamentoServicio)
         {
             _empleadoServicio = empleadoServicio ?? throw new ArgumentNullException(nameof(empleadoServicio));
+            _departamentoServicio = departamentoServicio ?? throw new ArgumentNullException(nameof(departamentoServicio));
+        }
+
+        // Método para cargar la lista de departamentos
+        private async Task CargarDepartamentos()
+        {
+            var departamentos = await _departamentoServicio.ListarDepartamentos();
+            ViewBag.Departamentos = new SelectList(departamentos, "IdDepartamento", "Nombre");
         }
 
         // GET: Empleado
@@ -57,8 +68,9 @@ namespace TalentoPro.Web.Controllers
         }
 
         // GET: Empleado/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await CargarDepartamentos();
             return View();
         }
 
@@ -80,11 +92,13 @@ namespace TalentoPro.Web.Controllers
                     
                     ModelState.AddModelError("", resultado.Mensaje);
                 }
+                await CargarDepartamentos();
                 return View(empleado);
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
+                await CargarDepartamentos();
                 return View(empleado);
             }
         }
@@ -115,6 +129,7 @@ namespace TalentoPro.Web.Controllers
                     EmailCorporativo = empleado.EmailCorporativo
                 };
                 
+                await CargarDepartamentos();
                 return View(empleadoSolicitud);
             }
             catch (EmpleadoNoEncontradoException)
@@ -151,11 +166,13 @@ namespace TalentoPro.Web.Controllers
                     
                     ModelState.AddModelError("", resultado.Mensaje);
                 }
+                await CargarDepartamentos();
                 return View(empleado);
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
+                await CargarDepartamentos();
                 return View(empleado);
             }
         }

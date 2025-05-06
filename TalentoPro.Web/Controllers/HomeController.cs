@@ -25,24 +25,10 @@ namespace TalentoPro.Web.Controllers
             _departamentoRepository = departamentoRepository ?? throw new ArgumentNullException(nameof(departamentoRepository));
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            try
-            {
-                var empleados = await _empleadoServicio.ListarEmpleados();
-                var departamentos = await _departamentoRepository.Listar();
-                
-                ViewBag.CantidadEmpleados = empleados.Count();
-                ViewBag.CantidadDepartamentos = departamentos.Count();
-                
-                return View();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error al cargar la página principal");
-                ViewBag.Error = "Ocurrió un error al cargar los datos. Por favor, inténtelo de nuevo más tarde.";
-                return View();
-            }
+            // Redirigir a la página principal de empleados
+            return RedirectToAction("Index", "Empleado");
         }
 
         public IActionResult Privacy()

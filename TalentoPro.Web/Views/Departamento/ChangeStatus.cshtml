@@ -1,0 +1,81 @@
+@model TalentoPro.Domain.Entities.Departamento
+
+@{
+    ViewData["Title"] = "Cambiar Estado";
+}
+
+<div class="container">
+    <h1>Cambiar Estado del Departamento</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-warning text-dark">
+                    Cambio de Estado
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <p>Está a punto de cambiar el estado del departamento <strong>@Model.Nombre</strong>.</p>
+                        <p>Estado actual: 
+                            @if (Model.Estado == 'A')
+                            {
+                                <span class="badge bg-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Inactivo</span>
+                            }
+                        </p>
+                    </div>
+
+                    <form asp-action="ChangeStatus" method="post">
+                        <input type="hidden" name="id" value="@Model.IdDepartamento" />
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Seleccione el nuevo estado:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="estado" id="estadoActivo" value="A" checked="@(Model.Estado == 'A')">
+                                <label class="form-check-label" for="estadoActivo">
+                                    <span class="badge bg-success">Activo</span> - El departamento estará operativo
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="estado" id="estadoInactivo" value="I" checked="@(Model.Estado == 'I')">
+                                <label class="form-check-label" for="estadoInactivo">
+                                    <span class="badge bg-danger">Inactivo</span> - El departamento quedará suspendido
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="bi bi-check-circle"></i> Confirmar Cambio
+                            </button>
+                            <a asp-action="Details" asp-route-id="@Model.IdDepartamento" class="btn btn-outline-secondary">
+                                <i class="bi bi-x-circle"></i> Cancelar
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5>Información importante</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Al cambiar el estado del departamento:</strong></p>
+                    <ul>
+                        <li>Si lo desactiva, no aparecerá en listados generales</li>
+                        <li>Los empleados asociados no se verán afectados</li>
+                        <li>Puede reactivar el departamento en cualquier momento</li>
+                    </ul>
+                    <div class="alert alert-warning mt-3">
+                        <i class="bi bi-exclamation-triangle"></i> Esta acción quedará registrada en el sistema.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,114 @@
+@model IEnumerable<TalentoPro.Application.Models.DepartamentoModel>
+
+@{
+    ViewData["Title"] = "Departamentos";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="mb-0">Departamentos</h1>
+            <p class="text-muted">Gestión de áreas organizacionales</p>
+        </div>
+        <div>
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle me-1"></i> Nuevo Departamento
+            </a>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="card border-0 shadow-sm">
+            <div class="card-body text-center py-5">
+                <i class="bi bi-building fs-1 text-muted mb-3"></i>
+                <h4>No hay departamentos registrados</h4>
+                <p class="text-muted">Para comenzar, registra un nuevo departamento usando el botón superior.</p>
+                <a asp-action="Create" class="btn btn-primary mt-2">
+                    <i class="bi bi-plus-circle me-1"></i> Registrar Primer Departamento
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th class="ps-4">ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Empleados</th>
+                                <th>Estado</th>
+                                <th class="text-end pe-4">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="ps-4">@item.IdDepartamento</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="dept-icon me-2">
+                                                <i class="bi bi-building"></i>
+                                            </div>
+                                            <div class="fw-semibold">@item.Nombre</div>
+                                        </div>
+                                    </td>
+                                    <td class="text-muted">@(String.IsNullOrEmpty(item.Descripcion) ? "-" : item.Descripcion)</td>
+                                    <td>
+                                        <a asp-controller="Empleado" asp-action="ByDepartment" asp-route-id="@item.IdDepartamento" 
+                                           class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-people me-1"></i> @item.TotalEmpleados Empleados
+                                        </a>
+                                    </td>
+                                    <td>
+                                        @if (item.Estado == 'A')
+                                        {
+                                            <span class="badge rounded-pill bg-success">Activo</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge rounded-pill bg-danger">Inactivo</span>
+                                        }
+                                    </td>
+                                    <td class="text-end pe-4">
+                                        <div class="btn-group">
+                                            <a asp-action="Details" asp-route-id="@item.IdDepartamento" class="btn btn-sm btn-outline-secondary">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            <a asp-action="Edit" asp-route-id="@item.IdDepartamento" class="btn btn-sm btn-outline-primary">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <a asp-action="ChangeStatus" asp-route-id="@item.IdDepartamento" class="btn btn-sm btn-outline-secondary">
+                                                <i class="bi bi-toggle-on"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .dept-icon {
+        width: 36px;
+        height: 36px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style> 

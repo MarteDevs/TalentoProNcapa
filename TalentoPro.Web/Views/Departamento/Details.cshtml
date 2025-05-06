@@ -1,0 +1,55 @@
+@model TalentoPro.Domain.Entities.Departamento
+
+@{
+    ViewData["Title"] = "Detalles del Departamento";
+}
+
+<div class="container">
+    <h1>Detalles del Departamento</h1>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Información del Departamento
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">ID:</div>
+                <div class="col-md-9">@Model.IdDepartamento</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">Nombre:</div>
+                <div class="col-md-9">@Model.Nombre</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">Descripción:</div>
+                <div class="col-md-9">@Model.Descripcion</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 fw-bold">Estado:</div>
+                <div class="col-md-9">
+                    @if (Model.Estado == 'A')
+                    {
+                        <span class="badge bg-success">Activo</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Inactivo</span>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group" role="group">
+                <a asp-action="Edit" asp-route-id="@Model.IdDepartamento" class="btn btn-primary">
+                    <i class="bi bi-pencil"></i> Editar
+                </a>
+                <a asp-action="Empleados" asp-route-id="@Model.IdDepartamento" class="btn btn-info">
+                    <i class="bi bi-people"></i> Ver Empleados
+                </a>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Volver a la Lista
+                </a>
+            </div>
+        </div>
+    </div>
+</div> 

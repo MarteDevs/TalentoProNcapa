@@ -1,0 +1,96 @@
+@model TalentoPro.Domain.Entities.Departamento
+
+@{
+    ViewData["Title"] = "Editar Departamento";
+}
+
+<div class="container">
+    <h1>Editar Departamento</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Formulario de Edición
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="IdDepartamento" />
+                        <input type="hidden" asp-for="Estado" />
+                        
+                        <div class="mb-3 row">
+                            <label asp-for="IdDepartamento" class="col-sm-3 col-form-label">ID</label>
+                            <div class="col-sm-9">
+                                <input asp-for="IdDepartamento" class="form-control" disabled />
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="Nombre" class="col-sm-3 col-form-label">Nombre</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Nombre" class="form-control" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label asp-for="Descripcion" class="col-sm-3 col-form-label">Descripción</label>
+                            <div class="col-sm-9">
+                                <textarea asp-for="Descripcion" class="form-control" rows="4"></textarea>
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label">Estado Actual</label>
+                            <div class="col-sm-9">
+                                @if (Model.Estado == 'A')
+                                {
+                                    <span class="badge bg-success">Activo</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Inactivo</span>
+                                }
+                                <small class="d-block text-muted mt-1">
+                                    Para cambiar el estado, use la opción "Cambiar Estado" en la página de detalles.
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <div class="offset-sm-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-save"></i> Guardar Cambios
+                                </button>
+                                <a asp-action="Index" class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-circle"></i> Cancelar
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h5>Instrucciones</h5>
+                </div>
+                <div class="card-body">
+                    <p>Actualice la información del departamento según sea necesario.</p>
+                    <p><strong>Notas:</strong></p>
+                    <ul>
+                        <li>El ID del departamento no se puede modificar</li>
+                        <li>Para cambiar el estado, use la opción específica de cambio de estado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

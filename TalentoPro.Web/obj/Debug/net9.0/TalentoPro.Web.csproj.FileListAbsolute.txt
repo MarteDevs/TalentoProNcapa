@@ -169,3 +169,4 @@ C:\Users\Rokko\Downloads\Nueva carpeta (16)\POOII_EF_POLO_SILVA_MARCO_RODRIGO\PO
 C:\Users\Rokko\Downloads\Nueva carpeta (16)\POOII_EF_POLO_SILVA_MARCO_RODRIGO\POOII_EF_POLO_SILVA_MARCO\TalentoPro.Web\obj\Debug\net9.0\TalentoPro.Web.genruntimeconfig.cache
 C:\Users\Rokko\Downloads\Nueva carpeta (16)\POOII_EF_POLO_SILVA_MARCO_RODRIGO\POOII_EF_POLO_SILVA_MARCO\TalentoPro.Web\obj\Debug\net9.0\ref\TalentoPro.Web.dll
 C:\Users\Rokko\Downloads\Nueva carpeta (16)\POOII_EF_POLO_SILVA_MARCO_RODRIGO\POOII_EF_POLO_SILVA_MARCO\TalentoPro.Web\bin\Debug\net9.0\Dapper.dll
+C:\Users\Rokko\Downloads\Nueva carpeta (16)\POOII_EF_POLO_SILVA_MARCO_RODRIGO\POOII_EF_POLO_SILVA_MARCO\TalentoPro.Web\obj\Debug\net9.0\TalentoPro.Web.sourcelink.json
