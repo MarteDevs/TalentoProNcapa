@@ -1,0 +1,171 @@
+@model TalentoPro.Application.Models.InscripcionSolicitudModel
+
+@{
+    ViewData["Title"] = "Editar Inscripción";
+    var tieneCapacitaciones = ViewBag.CapacitacionesCount > 0;
+}
+
+<div class="container-fluid px-4 py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-light">Editar Inscripción</h2>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i> Volver
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Información de la Inscripción</h5>
+                </div>
+                <div class="card-body">
+                    @if(!tieneCapacitaciones) 
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <strong>No hay capacitaciones vigentes disponibles.</strong> Algunas opciones de edición pueden estar limitadas.
+                            <hr>
+                            <p class="mb-0">
+                                <a asp-action="DiagnosticoCapacitaciones" class="alert-link">
+                                    <i class="bi bi-search me-1"></i> Ver diagnóstico de capacitaciones
+                                </a>
+                            </p>
+                        </div>
+                    }
+            
+                    <form asp-action="Edit" class="needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        
+                        <input type="hidden" asp-for="IdInscripcion" />
+                        
+                        <div class="row mb-3">
+                            <label asp-for="IdInscripcion" class="col-md-3 col-form-label">Código</label>
+                            <div class="col-md-9">
+                                <input asp-for="IdInscripcion" class="form-control" readonly />
+                                <span asp-validation-for="IdInscripcion" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label asp-for="IdEmpleado" class="col-md-3 col-form-label">Empleado</label>
+                            <div class="col-md-9">
+                                <select asp-for="IdEmpleado" class="form-select" asp-items="ViewBag.Empleados" required>
+                                    <option value="">-- Seleccionar Empleado --</option>
+                                </select>
+                                <span asp-validation-for="IdEmpleado" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label asp-for="IdCapacitacion" class="col-md-3 col-form-label">Capacitación</label>
+                            <div class="col-md-9">
+                                @if(tieneCapacitaciones)
+                                {
+                                    <select asp-for="IdCapacitacion" class="form-select" asp-items="ViewBag.Capacitaciones" required>
+                                        <option value="">-- Seleccionar Capacitación --</option>
+                                    </select>
+                                }
+                                else
+                                {
+                                    <select asp-for="IdCapacitacion" class="form-select" required>
+                                        <option value="@Model.IdCapacitacion" selected>@Model.IdCapacitacion (Capacitación Actual)</option>
+                                    </select>
+                                    <small class="text-muted mt-1 d-block">
+                                        <i class="bi bi-info-circle me-1"></i>No hay capacitaciones vigentes disponibles. Se mantiene la capacitación original.
+                                    </small>
+                                }
+                                <span asp-validation-for="IdCapacitacion" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label asp-for="FechaInscripcion" class="col-md-3 col-form-label">Fecha</label>
+                            <div class="col-md-9">
+                                <input asp-for="FechaInscripcion" class="form-control" type="date" required />
+                                <span asp-validation-for="FechaInscripcion" class="text-danger"></span>
+                                <div class="invalid-feedback">La fecha de inscripción es requerida.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label asp-for="EstadoInscripcion" class="col-md-3 col-form-label">Estado</label>
+                            <div class="col-md-9">
+                                <select asp-for="EstadoInscripcion" class="form-select" required>
+                                    <option value="P">Pendiente</option>
+                                    <option value="A">Aprobada</option>
+                                    <option value="R">Rechazada</option>
+                                    <option value="C">Completada</option>
+                                </select>
+                                <span asp-validation-for="EstadoInscripcion" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label asp-for="Calificacion" class="col-md-3 col-form-label">Calificación</label>
+                            <div class="col-md-9">
+                                <input asp-for="Calificacion" class="form-control" min="0" max="20" step="0.5" />
+                                <span asp-validation-for="Calificacion" class="text-danger"></span>
+                                <small class="form-text text-muted">Calificación del 0 al 20, puede dejar en blanco si aún no está calificado.</small>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label asp-for="Comentarios" class="col-md-3 col-form-label">Comentarios</label>
+                            <div class="col-md-9">
+                                <textarea asp-for="Comentarios" class="form-control" rows="3" placeholder="Comentarios adicionales sobre la inscripción..."></textarea>
+                                <span asp-validation-for="Comentarios" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                            <a asp-action="Index" class="btn btn-outline-secondary me-2">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save me-1"></i> Guardar Cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Información Adicional</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info" role="alert">
+                        <h6 class="alert-heading fw-bold"><i class="bi bi-info-circle me-2"></i>Instrucciones</h6>
+                        <hr>
+                        <p class="mb-0">Puede actualizar la información de la inscripción. Los cambios se aplicarán inmediatamente al guardar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        // Activar validación personalizada de Bootstrap
+        document.addEventListener('DOMContentLoaded', function() {
+            'use strict';
+            
+            // Fetch all forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+            
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        });
+    </script>
+} 

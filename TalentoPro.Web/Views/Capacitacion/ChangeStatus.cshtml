@@ -1,0 +1,76 @@
+@model TalentoPro.Application.Models.CapacitacionModel
+
+@{
+    ViewData["Title"] = "Cambiar Estado de Capacitación";
+}
+
+<h1>Cambiar Estado de Capacitación</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5>Información de la Capacitación</h5>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IdCapacitacion)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.IdCapacitacion)</dd>
+                    
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NombreCurso)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreCurso)</dd>
+                    
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Instructor)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Instructor)</dd>
+                    
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaInicio)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaInicio)</dd>
+                    
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaFin)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaFin)</dd>
+                    
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Estado)</dt>
+                    <dd class="col-sm-9">
+                        @if (Model.Estado == 'A')
+                        {
+                            <span class="badge bg-success">Activo</span>
+                        }
+                        else if (Model.Estado == 'I')
+                        {
+                            <span class="badge bg-danger">Inactivo</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">@Model.Estado</span>
+                        }
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <form asp-action="ChangeStatus" method="post">
+            <input type="hidden" name="id" value="@Model.IdCapacitacion" />
+            
+            <div class="form-group mb-3">
+                <label class="control-label">Nuevo Estado</label>
+                <select name="estado" class="form-control">
+                    @if (Model.Estado == 'A')
+                    {
+                        <option value="A" selected>Activo</option>
+                        <option value="I">Inactivo</option>
+                    }
+                    else
+                    {
+                        <option value="A">Activo</option>
+                        <option value="I" selected>Inactivo</option>
+                    }
+                </select>
+            </div>
+            
+            <div class="form-group mt-4">
+                <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div> 

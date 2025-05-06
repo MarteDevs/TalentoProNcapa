@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using TalentoPro.Application.Excepciones;
 using TalentoPro.Application.Models;
 using TalentoPro.Application.Servicios;
+using System.Linq;
 
 namespace TalentoPro.Web.Controllers
 {
@@ -27,11 +28,38 @@ namespace TalentoPro.Web.Controllers
         // Método para cargar listas de empleados y capacitaciones
         private async Task CargarListasDropdown()
         {
-            var empleados = await _empleadoServicio.ListarEmpleados();
-            ViewBag.Empleados = new SelectList(empleados, "IdEmpleado", "Nombre");
+            try
+            {
+                // Cargar lista de empleados
+                var empleados = await _empleadoServicio.ListarEmpleados();
+                ViewBag.Empleados = new SelectList(empleados, "IdEmpleado", "Nombre");
 
-            var capacitaciones = await _capacitacionServicio.ObtenerCapacitacionesVigentes();
-            ViewBag.Capacitaciones = new SelectList(capacitaciones, "IdCapacitacion", "NombreCurso");
+                // Cargar lista de capacitaciones vigentes
+                var capacitaciones = await _capacitacionServicio.ObtenerCapacitacionesVigentes();
+                
+                if (capacitaciones != null && capacitaciones.Any())
+                {
+                    ViewBag.Capacitaciones = new SelectList(capacitaciones, "IdCapacitacion", "NombreCurso");
+                    ViewBag.CapacitacionesCount = capacitaciones.Count();
+                }
+                else
+                {
+                    // Si no hay capacitaciones, asignar una lista vacía
+                    ViewBag.Capacitaciones = new SelectList(Enumerable.Empty<SelectListItem>());
+                    ViewBag.CapacitacionesCount = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // En caso de error, inicializar las listas como vacías para evitar errores en la vista
+                ViewBag.Empleados = new SelectList(Enumerable.Empty<SelectListItem>());
+                ViewBag.Capacitaciones = new SelectList(Enumerable.Empty<SelectListItem>());
+                
+                // Registrar el error para debugging
+                System.Diagnostics.Debug.WriteLine($"Error al cargar listas dropdown: {ex.Message}");
+                
+                // Opcionalmente, si tienes un servicio de logs, podrías registrar el error aquí
+            }
         }
 
         // GET: Inscripcion
@@ -74,10 +102,16 @@ namespace TalentoPro.Web.Controllers
         {
             await CargarListasDropdown();
             
-            // Generar un ID de inscripción predeterminado
+            // Verificar si hay capacitaciones vigentes disponibles
+            if (ViewBag.CapacitacionesCount == 0)
+            {
+                TempData["Warning"] = "No hay capacitaciones vigentes disponibles para inscripción. Por favor, contacte al administrador.";
+            }
+            
+            // Generar un ID de inscripción predeterminado con segundos para evitar duplicados
             var inscripcionModel = new InscripcionSolicitudModel
             {
-                IdInscripcion = $"INS{DateTime.Now:yyMMddHHmm}",
+                IdInscripcion = $"INS{DateTime.Now:yyMMddHHmmss}",
                 FechaInscripcion = DateTime.Today,
                 EstadoInscripcion = 'P'
             };
@@ -98,6 +132,7 @@ namespace TalentoPro.Web.Controllers
                     if (resultado.Exito)
                     {
                         TempData["Success"] = resultado.Mensaje;
+                        // Redireccionar directamente al índice sin tratar de obtener los detalles
                         return RedirectToAction(nameof(Index));
                     }
                     
@@ -105,6 +140,11 @@ namespace TalentoPro.Web.Controllers
                 }
                 
                 await CargarListasDropdown();
+                // Verificamos si hay capacitaciones disponibles después de recargar las listas
+                if (ViewBag.CapacitacionesCount == 0)
+                {
+                    TempData["Warning"] = "No hay capacitaciones vigentes disponibles para inscripción. Por favor, contacte al administrador.";
+                }
                 return View(inscripcion);
             }
             catch (Exception ex)
@@ -139,6 +179,13 @@ namespace TalentoPro.Web.Controllers
                 };
                 
                 await CargarListasDropdown();
+
+                // Verificar si hay capacitaciones vigentes disponibles
+                if (ViewBag.CapacitacionesCount == 0)
+                {
+                    TempData["Warning"] = "No hay capacitaciones vigentes disponibles para edición. Algunas opciones pueden estar limitadas.";
+                }
+                
                 return View(inscripcionSolicitud);
             }
             catch (Exception ex)
@@ -173,6 +220,13 @@ namespace TalentoPro.Web.Controllers
                 }
                 
                 await CargarListasDropdown();
+                
+                // Verificar si hay capacitaciones vigentes disponibles
+                if (ViewBag.CapacitacionesCount == 0)
+                {
+                    TempData["Warning"] = "No hay capacitaciones vigentes disponibles para edición. Algunas opciones pueden estar limitadas.";
+                }
+                
                 return View(inscripcion);
             }
             catch (Exception ex)
@@ -378,6 +432,37 @@ namespace TalentoPro.Web.Controllers
                 TempData["Error"] = ex.Message;
                 return RedirectToAction("Error", "Home");
             }
+        }
+
+        // GET: Inscripcion/DiagnosticoCapacitaciones
+        public async Task<IActionResult> DiagnosticoCapacitaciones()
+        {
+            try
+            {
+                var capacitaciones = await _capacitacionServicio.ObtenerCapacitacionesVigentes();
+                var todasLasCapacitaciones = await _capacitacionServicio.ListarCapacitaciones();
+                
+                ViewBag.CapacitacionesVigentes = capacitaciones;
+                ViewBag.TodasLasCapacitaciones = todasLasCapacitaciones;
+                ViewBag.TieneCapacitacionesVigentes = capacitaciones != null && capacitaciones.Any();
+                ViewBag.CantidadVigentes = capacitaciones?.Count() ?? 0;
+                ViewBag.CantidadTotal = todasLasCapacitaciones?.Count() ?? 0;
+                
+                return View();
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Error al obtener diagnóstico de capacitaciones: {ex.Message}";
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
+        // GET: Inscripcion/CrearCapacitacionPrueba
+        public IActionResult CrearCapacitacionPrueba()
+        {
+            // Redireccionar a la página de creación de capacitaciones
+            TempData["Info"] = "Cree una capacitación con estado Activo (A) y fechas vigentes para resolver el problema.";
+            return RedirectToAction("Create", "Capacitacion");
         }
     }
 } 

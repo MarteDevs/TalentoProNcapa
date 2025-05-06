@@ -1,0 +1,171 @@
+@{
+    ViewData["Title"] = "Diagnóstico de Capacitaciones";
+    var tieneCapacitacionesVigentes = ViewBag.TieneCapacitacionesVigentes;
+    var capacitacionesVigentes = ViewBag.CapacitacionesVigentes;
+    var todasLasCapacitaciones = ViewBag.TodasLasCapacitaciones;
+    var cantidadVigentes = ViewBag.CantidadVigentes;
+    var cantidadTotal = ViewBag.CantidadTotal;
+}
+
+<div class="container-fluid px-4 py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-light">Diagnóstico de Capacitaciones</h2>
+        <div>
+            <a asp-action="CrearCapacitacionPrueba" class="btn btn-outline-success me-2">
+                <i class="bi bi-plus-circle me-1"></i> Crear Capacitación
+            </a>
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Resumen de Capacitaciones</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100 bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-3 text-muted">Capacitaciones Totales</h6>
+                                    <h3 class="display-4 fw-bold mb-0">@cantidadTotal</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 @(tieneCapacitacionesVigentes ? "bg-success bg-opacity-10" : "bg-danger bg-opacity-10")">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-3 text-muted">Capacitaciones Vigentes</h6>
+                                    <h3 class="display-4 fw-bold mb-0">@cantidadVigentes</h3>
+                                    @if(!tieneCapacitacionesVigentes)
+                                    {
+                                        <div class="mt-3 text-danger">
+                                            <i class="bi bi-exclamation-triangle-fill me-1"></i>
+                                            No hay capacitaciones vigentes disponibles para inscripción.
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if(cantidadTotal == 0)
+        {
+            <div class="col-12 mb-4">
+                <div class="alert alert-danger" role="alert">
+                    <h5 class="alert-heading"><i class="bi bi-exclamation-triangle-fill me-2"></i>No hay capacitaciones registradas</h5>
+                    <p>No se encontraron capacitaciones en la base de datos. Debe crear al menos una capacitación con estado 'Activo' y fechas vigentes para poder realizar inscripciones.</p>
+                    <hr>
+                    <p class="mb-0">
+                        Haga clic en el botón "Crear Capacitación" en la parte superior para solucionar este problema.
+                    </p>
+                </div>
+            </div>
+        }
+        else if(!tieneCapacitacionesVigentes)
+        {
+            <div class="col-12 mb-4">
+                <div class="alert alert-warning" role="alert">
+                    <h5 class="alert-heading"><i class="bi bi-exclamation-triangle-fill me-2"></i>No hay capacitaciones vigentes</h5>
+                    <p>Se encontraron capacitaciones en la base de datos, pero ninguna cumple con los criterios para ser considerada vigente (estado activo y fecha vigente).</p>
+                    <hr>
+                    <p class="mb-0">
+                        Revise la tabla a continuación y actualice alguna capacitación existente o cree una nueva con los criterios adecuados.
+                    </p>
+                </div>
+            </div>
+        }
+
+        @if(cantidadTotal > 0)
+        {
+            <div class="col-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="card-title mb-0">Todas las Capacitaciones</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nombre del Curso</th>
+                                        <th>Instructor</th>
+                                        <th>Fecha Inicio</th>
+                                        <th>Fecha Fin</th>
+                                        <th>Estado</th>
+                                        <th>¿Vigente?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(var capacitacion in todasLasCapacitaciones)
+                                    {
+                                        var estaVigente = capacitacion.EstaVigente;
+                                        <tr class="@(estaVigente ? "table-success" : "")">
+                                            <td>@capacitacion.IdCapacitacion</td>
+                                            <td>@capacitacion.NombreCurso</td>
+                                            <td>@capacitacion.Instructor</td>
+                                            <td>@capacitacion.FechaInicio.ToString("dd/MM/yyyy")</td>
+                                            <td>@capacitacion.FechaFin.ToString("dd/MM/yyyy")</td>
+                                            <td>
+                                                <span class="badge bg-@(capacitacion.Estado == 'A' ? "success" : capacitacion.Estado == 'I' ? "warning" : "danger")">
+                                                    @capacitacion.EstadoTexto
+                                                </span>
+                                            </td>
+                                            <td>
+                                                @if(estaVigente)
+                                                {
+                                                    <i class="bi bi-check-circle-fill text-success"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="bi bi-x-circle-fill text-danger"></i>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Información de Diagnóstico</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info" role="alert">
+                        <h6 class="alert-heading fw-bold"><i class="bi bi-info-circle me-2"></i>¿Qué son las capacitaciones vigentes?</h6>
+                        <hr>
+                        <p>Para que una capacitación sea considerada <strong>vigente</strong> debe cumplir con los siguientes criterios:</p>
+                        <ul>
+                            <li>Tener estado <strong>Activo (A)</strong></li>
+                            <li>La fecha de fin debe ser <strong>igual o posterior</strong> a la fecha actual</li>
+                        </ul>
+                        <p class="mb-0">Las capacitaciones que no cumplan con ambos criterios no estarán disponibles para inscripción.</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6>Pasos para solucionar la falta de capacitaciones:</h6>
+                        <ol>
+                            <li>Crear nuevas capacitaciones con fechas futuras o que incluyan la fecha actual</li>
+                            <li>Verificar que las capacitaciones existentes tengan el estado "Activo" (A)</li>
+                            <li>Extender la fecha de fin de las capacitaciones existentes si es necesario</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

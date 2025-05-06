@@ -1,0 +1,53 @@
+@model TalentoPro.Application.Models.CapacitacionModel
+
+@{
+    ViewData["Title"] = "Eliminar Capacitación";
+}
+
+<h1>Eliminar Capacitación</h1>
+
+<div class="alert alert-danger">
+    <h4>¿Está seguro de que desea eliminar esta capacitación?</h4>
+    <p>Esta acción no se puede deshacer y podría afectar a las inscripciones existentes.</p>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IdCapacitacion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.IdCapacitacion)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NombreCurso)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreCurso)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Instructor)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Instructor)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaInicio)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaInicio)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaFin)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaFin)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Estado)</dt>
+        <dd class="col-sm-9">
+            @if (Model.Estado == 'A')
+            {
+                <span class="badge bg-success">Activo</span>
+            }
+            else if (Model.Estado == 'I')
+            {
+                <span class="badge bg-danger">Inactivo</span>
+            }
+            else
+            {
+                <span class="badge bg-secondary">@Model.Estado</span>
+            }
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" class="mt-3">
+        <input type="hidden" asp-for="IdCapacitacion" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div> 

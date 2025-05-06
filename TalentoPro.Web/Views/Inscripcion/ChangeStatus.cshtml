@@ -1,0 +1,97 @@
+@model TalentoPro.Application.Models.InscripcionModel
+
+@{
+    ViewData["Title"] = "Cambiar Estado de Inscripción";
+}
+
+<h1>Cambiar Estado de Inscripción</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5>Información de la Inscripción</h5>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IdInscripcion)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.IdInscripcion)</dd>
+                    
+                    <dt class="col-sm-3">Empleado</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreEmpleado)</dd>
+                    
+                    <dt class="col-sm-3">Capacitación</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreCurso)</dd>
+                    
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaInscripcion)</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaInscripcion)</dd>
+                    
+                    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EstadoInscripcion)</dt>
+                    <dd class="col-sm-9">
+                        @switch (Model.EstadoInscripcion)
+                        {
+                            case 'P':
+                                <span class="badge bg-warning">Pendiente</span>
+                                break;
+                            case 'A':
+                                <span class="badge bg-success">Aprobada</span>
+                                break;
+                            case 'R':
+                                <span class="badge bg-danger">Rechazada</span>
+                                break;
+                            case 'C':
+                                <span class="badge bg-info">Completada</span>
+                                break;
+                            default:
+                                <span class="badge bg-secondary">@Model.EstadoInscripcion</span>
+                                break;
+                        }
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <form asp-action="ChangeStatus" method="post">
+            <input type="hidden" name="id" value="@Model.IdInscripcion" />
+            
+            <div class="form-group mb-3">
+                <label class="control-label">Nuevo Estado</label>
+                <select name="estadoInscripcion" class="form-control">
+                    @if (Model.EstadoInscripcion == 'P')
+                    {
+                        <option value="P" selected>Pendiente</option>
+                        <option value="A">Aprobada</option>
+                        <option value="R">Rechazada</option>
+                        <option value="C">Completada</option>
+                    }
+                    else if (Model.EstadoInscripcion == 'A')
+                    {
+                        <option value="P">Pendiente</option>
+                        <option value="A" selected>Aprobada</option>
+                        <option value="R">Rechazada</option>
+                        <option value="C">Completada</option>
+                    }
+                    else if (Model.EstadoInscripcion == 'R')
+                    {
+                        <option value="P">Pendiente</option>
+                        <option value="A">Aprobada</option>
+                        <option value="R" selected>Rechazada</option>
+                        <option value="C">Completada</option>
+                    }
+                    else
+                    {
+                        <option value="P">Pendiente</option>
+                        <option value="A">Aprobada</option>
+                        <option value="R">Rechazada</option>
+                        <option value="C" selected>Completada</option>
+                    }
+                </select>
+            </div>
+            
+            <div class="form-group mt-4">
+                <input type="submit" value="Cambiar Estado" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div> 

@@ -1,0 +1,56 @@
+@model TalentoPro.Application.Models.InscripcionModel
+
+@{
+    ViewData["Title"] = "Eliminar Inscripción";
+}
+
+<h1>Eliminar Inscripción</h1>
+
+<div class="alert alert-danger">
+    <h4>¿Está seguro de que desea eliminar esta inscripción?</h4>
+    <p>Esta acción no se puede deshacer y eliminará permanentemente el registro de inscripción.</p>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IdInscripcion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.IdInscripcion)</dd>
+        
+        <dt class="col-sm-3">Empleado</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreEmpleado)</dd>
+        
+        <dt class="col-sm-3">Capacitación</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreCurso)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaInscripcion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaInscripcion)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EstadoInscripcion)</dt>
+        <dd class="col-sm-9">
+            @switch (Model.EstadoInscripcion)
+            {
+                case 'P':
+                    <span class="badge bg-warning">Pendiente</span>
+                    break;
+                case 'A':
+                    <span class="badge bg-success">Aprobada</span>
+                    break;
+                case 'R':
+                    <span class="badge bg-danger">Rechazada</span>
+                    break;
+                case 'C':
+                    <span class="badge bg-info">Completada</span>
+                    break;
+                default:
+                    <span class="badge bg-secondary">@Model.EstadoInscripcion</span>
+                    break;
+            }
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" class="mt-3">
+        <input type="hidden" name="id" value="@Model.IdInscripcion" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div> 

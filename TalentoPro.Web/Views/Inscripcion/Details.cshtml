@@ -1,0 +1,85 @@
+@model TalentoPro.Application.Models.InscripcionModel
+
+@{
+    ViewData["Title"] = "Detalles de Inscripción";
+}
+
+<h1>Detalles de Inscripción</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IdInscripcion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.IdInscripcion)</dd>
+        
+        <dt class="col-sm-3">Empleado</dt>
+        <dd class="col-sm-9">
+            <a asp-controller="Empleado" asp-action="Details" asp-route-id="@Model.IdEmpleado">
+                @Html.DisplayFor(model => model.NombreEmpleado)
+            </a>
+        </dd>
+        
+        <dt class="col-sm-3">Capacitación</dt>
+        <dd class="col-sm-9">
+            <a asp-controller="Capacitacion" asp-action="Details" asp-route-id="@Model.IdCapacitacion">
+                @Html.DisplayFor(model => model.NombreCurso)
+            </a>
+        </dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FechaInscripcion)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaInscripcion)</dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EstadoInscripcion)</dt>
+        <dd class="col-sm-9">
+            @switch (Model.EstadoInscripcion)
+            {
+                case 'P':
+                    <span class="badge bg-warning">Pendiente</span>
+                    break;
+                case 'A':
+                    <span class="badge bg-success">Aprobada</span>
+                    break;
+                case 'R':
+                    <span class="badge bg-danger">Rechazada</span>
+                    break;
+                case 'C':
+                    <span class="badge bg-info">Completada</span>
+                    break;
+                default:
+                    <span class="badge bg-secondary">@Model.EstadoInscripcion</span>
+                    break;
+            }
+        </dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Calificacion)</dt>
+        <dd class="col-sm-9">
+            @if (Model.Calificacion.HasValue)
+            {
+                @Html.DisplayFor(model => model.Calificacion)
+            }
+            else
+            {
+                <span class="text-muted">Sin calificar</span>
+            }
+        </dd>
+        
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Comentarios)</dt>
+        <dd class="col-sm-9">
+            @if (!string.IsNullOrEmpty(Model.Comentarios))
+            {
+                @Html.DisplayFor(model => model.Comentarios)
+            }
+            else
+            {
+                <span class="text-muted">Sin comentarios</span>
+            }
+        </dd>
+    </dl>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.IdInscripcion" class="btn btn-primary">Editar</a>
+    <a asp-action="UpdateScore" asp-route-id="@Model.IdInscripcion" class="btn btn-success">Calificar</a>
+    <a asp-action="ChangeStatus" asp-route-id="@Model.IdInscripcion" class="btn btn-warning">Cambiar Estado</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+</div> 

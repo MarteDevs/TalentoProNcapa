@@ -1,0 +1,131 @@
+@model TalentoPro.Application.Models.CapacitacionModel
+
+@{
+    ViewData["Title"] = "Detalles de Capacitación";
+}
+
+<div class="container-fluid px-4 py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-light">Detalles de Capacitación</h2>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.IdCapacitacion" class="btn btn-primary">
+                <i class="bi bi-pencil me-1"></i> Editar
+            </a>
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Información General</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4 text-muted">@Html.DisplayNameFor(model => model.IdCapacitacion)</div>
+                        <div class="col-md-8 fw-medium">@Html.DisplayFor(model => model.IdCapacitacion)</div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-4 text-muted">@Html.DisplayNameFor(model => model.NombreCurso)</div>
+                        <div class="col-md-8 fw-medium">@Html.DisplayFor(model => model.NombreCurso)</div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-4 text-muted">@Html.DisplayNameFor(model => model.Descripcion)</div>
+                        <div class="col-md-8">@Html.DisplayFor(model => model.Descripcion)</div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-4 text-muted">@Html.DisplayNameFor(model => model.Instructor)</div>
+                        <div class="col-md-8">@Html.DisplayFor(model => model.Instructor)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Detalles del Curso</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row mb-3">
+                                <div class="col-md-6 text-muted">@Html.DisplayNameFor(model => model.FechaInicio)</div>
+                                <div class="col-md-6">@Html.DisplayFor(model => model.FechaInicio)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="row mb-3">
+                                <div class="col-md-6 text-muted">@Html.DisplayNameFor(model => model.FechaFin)</div>
+                                <div class="col-md-6">@Html.DisplayFor(model => model.FechaFin)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row mb-3">
+                                <div class="col-md-6 text-muted">@Html.DisplayNameFor(model => model.DuracionHoras)</div>
+                                <div class="col-md-6">@Html.DisplayFor(model => model.DuracionHoras) horas</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="row mb-3">
+                                <div class="col-md-6 text-muted">@Html.DisplayNameFor(model => model.Modalidad)</div>
+                                <div class="col-md-6"><span class="badge bg-light text-dark">@Model.Modalidad</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-3 text-muted">@Html.DisplayNameFor(model => model.Estado)</div>
+                        <div class="col-md-9">
+                            @if (Model.Estado == 'A')
+                            {
+                                <span class="badge bg-success">Activo</span>
+                            }
+                            else if (Model.Estado == 'I')
+                            {
+                                <span class="badge bg-danger">Inactivo</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">@Model.Estado</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Participantes</h5>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <a asp-controller="Inscripcion" asp-action="ByCapacitacion" asp-route-id="@Model.IdCapacitacion" class="btn btn-info btn-lg w-100">
+                            <i class="bi bi-people me-2"></i> Ver Inscripciones
+                        </a>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <a asp-action="ChangeStatus" asp-route-id="@Model.IdCapacitacion" class="btn btn-outline-primary">
+                            <i class="bi bi-toggle-on me-1"></i> Cambiar Estado
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@Model.IdCapacitacion" class="btn btn-outline-danger">
+                            <i class="bi bi-trash me-1"></i> Eliminar Capacitación
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
