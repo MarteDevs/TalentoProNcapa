@@ -193,7 +193,14 @@ namespace TalentoPro.Web.Controllers
                     IdEmpleado = empleado.IdEmpleado,
                     Nombre = empleado.Nombre,
                     Apellido = empleado.Apellido,
-                    Estado = empleado.Estado
+                    Estado = empleado.Estado,
+                    NuevoEstado = empleado.Estado switch
+                    {
+                        'A' => 'I',
+                        'I' => 'A',
+                        'C' => 'A',
+                        _ => 'A'
+                    }
                 };
                 
                 return View(cambioEstadoViewModel);

@@ -9,6 +9,9 @@ builder.Services.AddControllersWithViews();
 
 // Registrar servicios de dominio
 builder.Services.AddScoped<IEmpleadoService, ServicioEmpleado>();
+builder.Services.AddScoped<IDepartamentoService, ServicioDepartamento>();
+builder.Services.AddScoped<ICapacitacionService, ServicioCapacitacion>();
+builder.Services.AddScoped<IInscripcionService, ServicioInscripcion>();
 
 // Registrar servicios de infraestructura
 builder.Services.AddInfrastructureServices(builder.Configuration);

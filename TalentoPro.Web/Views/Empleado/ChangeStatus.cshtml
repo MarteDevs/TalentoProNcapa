@@ -4,93 +4,172 @@
     ViewData["Title"] = "Cambiar Estado";
 }
 
-<div class="container">
-    <h1>Cambiar Estado del Empleado</h1>
-
+<div class="container py-4">
     <div class="row">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header bg-secondary text-white">
-                    <h5>@Model.Nombre @Model.Apellido</h5>
+        <div class="col-md-8 mx-auto">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-primary text-white py-3">
+                    <h4 class="mb-0"><i class="bi bi-toggle-on me-2"></i> Cambiar Estado del Empleado</h4>
                 </div>
-                <div class="card-body">
-                    <form asp-action="ChangeStatus">
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <div class="d-inline-block p-3 rounded-circle bg-light mb-3">
+                            <i class="bi bi-person-badge fs-1 text-primary"></i>
+                        </div>
+                        <h5>@Model.Nombre @Model.Apellido</h5>
+                        <div class="mt-2">
+                            @{
+                                var badgeClass = Model.Estado switch
+                                {
+                                    'A' => "bg-success",
+                                    'I' => "bg-warning text-dark",
+                                    'C' => "bg-danger",
+                                    _ => "bg-secondary"
+                                };
+                                var badgeIcon = Model.Estado switch
+                                {
+                                    'A' => "bi-check-circle",
+                                    'I' => "bi-pause-circle",
+                                    'C' => "bi-x-circle",
+                                    _ => "bi-question-circle"
+                                };
+                            }
+                            <span class="badge @badgeClass px-3 py-2">
+                                <i class="bi @badgeIcon me-1"></i> 
+                                @Model.EstadoTexto
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <form asp-action="ChangeStatus" method="post">
                         <input type="hidden" asp-for="IdEmpleado" />
+                        <input type="hidden" asp-for="Estado" />
                         
-                        <div class="mb-3 row">
-                            <label asp-for="Estado" class="col-sm-3 col-form-label"></label>
-                            <div class="col-sm-9">
-                                <div class="form-control-plaintext">
-                                    @{
-                                        var badgeClass = Model.Estado switch
-                                        {
-                                            'A' => "bg-success",
-                                            'I' => "bg-warning",
-                                            'C' => "bg-danger",
-                                            _ => "bg-secondary"
-                                        };
-                                    }
-                                    <span class="badge @badgeClass">@Model.EstadoTexto</span>
+                        <div class="mb-4">
+                            <label asp-for="NuevoEstado" class="form-label fw-bold">Seleccione el nuevo estado:</label>
+                            <div class="row g-3 mt-1">
+                                <div class="col-md-4">
+                                    <div class="card h-100 border @(Model.Estado == 'A' ? "border-success" : "border-light") @(Model.Estado == 'A' ? "bg-light" : "")">
+                                        <div class="card-body text-center py-3">
+                                            @if (Model.Estado == 'A')
+                                            {
+                                                <input type="radio" asp-for="NuevoEstado" value="A" class="form-check-input visually-hidden" id="estadoActivo" disabled />
+                                            }
+                                            else
+                                            {
+                                                <input type="radio" asp-for="NuevoEstado" value="A" class="form-check-input visually-hidden" id="estadoActivo" />
+                                            }
+                                            <label for="estadoActivo" class="d-block mb-0 cursor-pointer">
+                                                <i class="bi bi-check-circle text-success fs-1 mb-2"></i>
+                                                <h5>Activo</h5>
+                                                <p class="text-muted mb-0 small">Empleado trabajando normalmente</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100 border @(Model.Estado == 'I' ? "border-warning" : "border-light") @(Model.Estado == 'I' ? "bg-light" : "")">
+                                        <div class="card-body text-center py-3">
+                                            @if (Model.Estado == 'I')
+                                            {
+                                                <input type="radio" asp-for="NuevoEstado" value="I" class="form-check-input visually-hidden" id="estadoInactivo" disabled />
+                                            }
+                                            else
+                                            {
+                                                <input type="radio" asp-for="NuevoEstado" value="I" class="form-check-input visually-hidden" id="estadoInactivo" />
+                                            }
+                                            <label for="estadoInactivo" class="d-block mb-0 cursor-pointer">
+                                                <i class="bi bi-pause-circle text-warning fs-1 mb-2"></i>
+                                                <h5>Inactivo</h5>
+                                                <p class="text-muted mb-0 small">Empleado temporalmente inactivo</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100 border @(Model.Estado == 'C' ? "border-danger" : "border-light") @(Model.Estado == 'C' ? "bg-light" : "")">
+                                        <div class="card-body text-center py-3">
+                                            @if (Model.Estado == 'C')
+                                            {
+                                                <input type="radio" asp-for="NuevoEstado" value="C" class="form-check-input visually-hidden" id="estadoCesado" disabled />
+                                            }
+                                            else
+                                            {
+                                                <input type="radio" asp-for="NuevoEstado" value="C" class="form-check-input visually-hidden" id="estadoCesado" />
+                                            }
+                                            <label for="estadoCesado" class="d-block mb-0 cursor-pointer">
+                                                <i class="bi bi-x-circle text-danger fs-1 mb-2"></i>
+                                                <h5>Cesado</h5>
+                                                <p class="text-muted mb-0 small">Empleado que ya no trabaja</p>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <span asp-validation-for="NuevoEstado" class="text-danger d-block mt-2"></span>
                         </div>
-
-                        <div class="mb-3 row">
-                            <label asp-for="NuevoEstado" class="col-sm-3 col-form-label"></label>
-                            <div class="col-sm-9">
-                                <select asp-for="NuevoEstado" class="form-select">
-                                    <option value="">-- Seleccione --</option>
-                                    <option value="A">Activo</option>
-                                    <option value="I">Inactivo</option>
-                                    <option value="C">Cesado</option>
-                                </select>
-                                <span asp-validation-for="NuevoEstado" class="text-danger"></span>
-                            </div>
-                        </div>
-
+                        
                         <div class="alert alert-warning">
+                            <i class="bi bi-exclamation-triangle me-2"></i>
                             <strong>Atención:</strong> El cambio de estado puede afectar el cálculo de beneficios y 
                             otros aspectos relacionados con el empleado.
                         </div>
-
-                        <div class="mb-3 row">
-                            <div class="offset-sm-3 col-sm-9">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-check-circle"></i> Confirmar Cambio
-                                </button>
-                                <a asp-action="Details" asp-route-id="@Model.IdEmpleado" class="btn btn-outline-secondary">
-                                    <i class="bi bi-x-circle"></i> Cancelar
-                                </a>
-                            </div>
+                        
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a asp-action="Details" asp-route-id="@Model.IdEmpleado" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-1"></i> Volver
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save me-1"></i> Guardar Cambio
+                            </button>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h5>Información de Estados</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-2">
-                        <span class="badge bg-success">Activo (A)</span>
-                        <p class="small mt-1">Empleado trabajando normalmente en la empresa.</p>
-                    </div>
-                    <div class="mb-2">
-                        <span class="badge bg-warning">Inactivo (I)</span>
-                        <p class="small mt-1">Empleado temporalmente inactivo (licencia, suspensión, etc.).</p>
-                    </div>
-                    <div class="mb-2">
-                        <span class="badge bg-danger">Cesado (C)</span>
-                        <p class="small mt-1">Empleado que ya no trabaja en la empresa.</p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<style>
+    .cursor-pointer {
+        cursor: pointer;
+    }
+    
+    /* Estilo para simular selección de tarjetas */
+    input[type="radio"]:checked + label .card {
+        border-color: var(--bs-primary) !important;
+    }
+    
+    /* Estilo para las tarjetas al hover */
+    .card:hover:not(.bg-light) {
+        border-color: #ddd !important;
+        background-color: #f9f9f9;
+        transition: all 0.2s;
+    }
+</style>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Asegurarnos que todo esté cargado antes de intentar añadir eventos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cuando se carga la página, marcar el radio button según el valor de NuevoEstado en el modelo
+            const nuevoEstadoValue = '@Model.NuevoEstado';
+            const radioButton = document.querySelector(`input[value="${nuevoEstadoValue}"]`);
+            if (radioButton && !radioButton.disabled) {
+                radioButton.checked = true;
+            }
+            
+            // Hacer que las tarjetas sean clickeables
+            document.querySelectorAll('.cursor-pointer').forEach(label => {
+                label.addEventListener('click', function() {
+                    const radioInput = this.closest('.card-body').querySelector('input[type="radio"]');
+                    if (radioInput && !radioInput.disabled) {
+                        radioInput.checked = true;
+                    }
+                });
+            });
+        });
+    </script>
 } 
